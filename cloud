@@ -1,0 +1,13 @@
+Give me a code in cloudsim-3.0.3 for this situation and call class GangSceduling :
+
+We have a system that jobs came in it. Each job has multiple cloudlets or tasks. Our DVM (Dispatcher Virtual Machine) uses Gang scheduling. For example in Gang scheduling we should create 5 VMs if our job has 5 cloudlet and run each cloudlet on each VM (so in this case tasks of each job jun parallel or time share). And if next job has 6 cloudlet we should create another VM to service that job. A virtual machine can only run one task at a time so in this case each VM has a queue of tasks that VM should run them. We should count all of queues sizes every time. if all the tasks in queues divided by number of VMs going more than 10 we should create new VMs for new jobs because this queues are so long and for best performance we create new VMs and pass tasks of new jobs to them not to old VMs. Also if queue of some VMs became 0 we should release that VM. Maximum number of VMs should not be more than 120.
+
+Global final variable :
+Maximum number of VMs = 120
+Job count = 100
+q = 0.7
+q is possibility of job is lowly parallel. (so in this case 1-q is possibility of highly parallel jobs).
+if job is lowly parallel : number of tasks in each job is random between 1 - 16
+if job is highly parallel : number of tasks in each job is random between 17 - 32
+
+print results
